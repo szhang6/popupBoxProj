@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+           .white_content {
+             position: absolute;
+             display: none;
+             width: 50%;
+             height: 50%;
+             border: 2px solid orange;
+             background-color: white;
+             z-index: 1002;
+             padding: 16px;
+             top:25%;
+             left:25%;
+           }
+
+           .black_overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                display: none;
+                opacity: .80;
+                z-index: 1001;
+           }
+        </style>
+        <script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $("button").click(function(){
+                    $(".black_overlay").css("display", "block");
+                    $(".white_content").css("display", "block");
+                });
+
+                $(".popbox").click(function(){
+                    $(".black_overlay").css("display", "none");
+                    $(".white_content").css("display", "none");
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <button type="button">Back</button>
+        <div class="white_content">
+            <button class="popbox">关闭弹出框</button>
+            <br/>窗口内容
+        </div>
+        <div class="black_overlay">
+            遮罩层
+        </div>
+
+
+    </body>
+</html>
